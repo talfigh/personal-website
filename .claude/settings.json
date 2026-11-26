@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./infra/backend.hcl)",
+      "Read(./infra/*.tfvars)",
+      "Read(./infra/*.tfstate)",
+      "Read(./infra/.terraform/**)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git commit --no-verify:*)",
+      "Bash(git commit -n:*)",
+      "Bash(tofu destroy:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(tofu apply:*)",
+      "Bash(aws:*)",
+      "Bash(npm install:*)",
+      "Bash(gh:*)"
+    ]
+  }
+}

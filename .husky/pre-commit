@@ -1,0 +1,11 @@
+# Blocks the commit if it contains a secret. Fails closed: if gitleaks is
+# missing, the commit is refused until it is installed (docs/SETUP.md, step 2).
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-commit: gitleaks is not installed, so secrets can't be checked."
+  echo "Install it (docs/SETUP.md, step 2) and commit again."
+  exit 1
+fi
+
+gitleaks git --pre-commit --staged --redact --no-banner
+npm run --silent format:check
+npm run --silent lint

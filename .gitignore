@@ -1,0 +1,40 @@
+# ── Secrets and private config: never commit ───────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+infra/backend.hcl
+infra/*.tfvars
+infra/*.tfvars.json
+!infra/*.tfvars.example
+
+# ── OpenTofu working files and state (state lives in S3) ───────────────────
+infra/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# ── Build and test output ──────────────────────────────────────────────────
+node_modules
+dist
+dist-ssr
+playwright-report
+test-results
+blob-report
+*.local
+*.log
+
+# ── Editor, OS, and local Claude settings ──────────────────────────────────
+.claude/settings.local.json
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.sw?

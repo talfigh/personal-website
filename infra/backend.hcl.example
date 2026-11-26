@@ -1,0 +1,6 @@
+# Copy to backend.hcl (gitignored) and fill in. See docs/SETUP.md, step 6.
+bucket       = "<your-state-bucket-name>"
+key          = "personal-website/terraform.tfstate"
+region       = "ca-central-1"
+encrypt      = true
+use_lockfile = true
